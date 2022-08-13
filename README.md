@@ -48,9 +48,73 @@ import pyblish_motionbuilder
 pyblish_motionbuiledr.setup()
 ```
 
-### Persistence
+### Documentation
 
+- [Under the hood](#under-the-hood)
+- [Manually show GUI](#manually-show-gui)
+- [No menu-item](#no-menu-item)
+- [Teardown pyblish-motionbuilder](#teardown-pyblish-motionbuilder)
+- [No GUI](#no-gui)
 
 <br>
 <br>
 <br>
+
+##### Under the hood
+
+The `setup()` command will:
+
+1. Register `motionbuilder` as as a ["host"](http://api.pyblish.com/pages/Plugin.hosts.html) to Pyblish, allowing plug-ins to be filtered accordingly.
+2. Append a new menu item, "Publish" to your File-menu
+3. Register a minimal set of plug-ins that are common across all integrations.
+
+![image](https://user-images.githubusercontent.com/523673/184475901-d978aad1-2901-4a79-9995-189d97b1bd20.png)
+
+<br>
+<br>
+<br>
+
+##### No menu-item
+
+Should you not want a menu-item, pass `menu=False`.
+
+```python
+import pyblish_motionbuilder
+pyblish_motionbuilder.setup(menu=False)
+```
+
+<br>
+<br>
+<br>
+
+##### Manually show GUI
+
+The menu-button is set to run `show()`, which you may also manually call yourself, such as from a button.
+
+```python
+import pyblish_motionbuilder
+pyblish_motionbuilder.show()
+```
+
+<br>
+<br>
+<br>
+
+##### Teardown pyblish-motionbuilder
+
+To get rid of the menu, and completely remove any trace of pyblish-motionbuilder from your motionbuilder session, run `teardown()`.
+
+```python
+import pyblish_motionbuilder
+pyblish_motionbuilder.teardown()
+```
+
+*This is not implemented yet.*
+
+<br>
+<br>
+<br>
+
+##### No GUI
+
+*This is not implemented yet.*
